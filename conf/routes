@@ -2,17 +2,6 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# Home page
-GET     /                           controllers.Assets.at(path="/public", file="app/index.html")
-
-GET     /api/posts                  controllers.Posts.list
-PATCH   /api/post/:id/like          controllers.Posts.like(id: String)
-PATCH   /api/post/:id               controllers.Posts.update(id: String)
-POST    /api/post                   controllers.Posts.add
-DELETE  /api/post/:id               controllers.Posts.delete(id : String)
-
-GET     /*file                      controllers.Assets.at(path="/public", file)
-
-POST    /orders                     controllers.OrderController.create
-POST    /orders_list                controllers.OrderController.list
-POST    /orders_get/:id             controllers.OrderController.get(id: String)
+POST   /v1/api/orders                     id.com.masiaveli.order.controllers.OrderController.create
+GET    /v1/api/orders_list                id.com.masiaveli.order.controllers.OrderController.list
+GET    /v1/api/orders/:id                 id.com.masiaveli.order.controllers.OrderController.get(id: String)
